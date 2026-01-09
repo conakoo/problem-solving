@@ -1,16 +1,35 @@
-touch $1/$2.py
+#!/bin/bash
+
+TAG=$1
+FILENAME=$2
+
+PROBLEM_NUM=$(echo "$FILENAME" | cut -d'_' -f1)
+
+touch "$TAG/$FILENAME.py"
 
 read -p 'Level(Easy, Medium, Hard): ' level
 read -p 'Status(Accepted, Failed): ' status
 read -p 'Note(optional): ' note
 
-echo "\"\"\"LeetCode Top 150
+cat <<EOF > "$TAG/$FILENAME.py"
+"""LeetCode Top 150
 Level:
-    $(echo $level)
+    $level
 Status:
-    $(echo $status)
+    $status
 Note:
-    $(echo $note)
+    $note
 
 $(date)
-\"\"\"" > $1/$2.py
+"""
+EOF
+
+if [[ "$status" == "Accepted" ]]; then
+    ICON="✅"
+elif [[ "$status" == "Failed" ]]; then
+    ICON="❌"
+else
+    ICON="$PROBLEM_NUM"
+fi
+
+sed -i '' "s/| $PROBLEM_NUM |/| $ICON |/" README.md
