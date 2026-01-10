@@ -3,7 +3,8 @@
 TAG=$1
 FILENAME=$2
 
-PROBLEM_NUM=$(echo "$FILENAME" | cut -d'_' -f1)
+RAW_NUM=$(echo "$FILENAME" | cut -d'_' -f1) # e.g., 001
+PROBLEM_NUM=$(echo "$RAW_NUM" | sed 's/^0*//') # 1
 
 touch "$TAG/$FILENAME.py"
 
