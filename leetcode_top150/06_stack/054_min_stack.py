@@ -8,7 +8,6 @@ Note:
 
 Sat Jan 17 22:28:44 KST 2026
 """
-import heapq
 class MinStack:
 
     def __init__(self):
