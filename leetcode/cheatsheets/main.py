@@ -1,14 +1,4 @@
 """Cheat Sheet for Problem Solving
-1. Arrays
-2. Stack
-3. Queue
-4. Tree
-5. Sorting
-6. Graph
-7. Minimum Spanning Tree
-8. Disjoint Set
-9. Dijkstra
-10. Shortest Path
 """
 
 
@@ -95,6 +85,40 @@ def countingsort_fn():
     """Counting Sort
     """
     pass
+
+def bst_fn():
+    """Binary Search Tree
+              8
+        3         10
+    1       6         14
+
+    Description:
+        모든 값이 unique, 왼쪽 subtree의 모든 원소는 현재 값보다 strictly 작고 오른쪽 subtree의 모든 원소는 현재 값보다 strictly 큰 binary tree
+
+    Prints:
+        True
+
+    """
+    class Node:
+        def __init__(self, val):
+            self.val = val
+            self.left = None
+            self.right = None
+
+    def is_bst(cur, min, max):
+        if not cur:
+            return True
+        if cur.val <= min or cur.val >= max:
+            return False
+        return is_bst(cur.left, min, cur.val) and is_bst(cur.right, cur.val, max)
+    
+    root = Node(8)
+    root.left = Node(3)
+    root.right = Node(10)
+    root.left.left = Node(1)
+    root.left.right = Node(6)
+    root.right.right = Node(14)
+    print(is_bst(root, -1e9, 1e9))
 
 
 def bfs_fn(): # TODO: change to Graph ver.
@@ -496,6 +520,14 @@ def indexed_tree_fn(): # TODO: unfinish
     print(tree)
     update(2, 1)
     print(tree)
+
+
+def sqrt_decomposition_fn():
+    pass
+
+
+def lowest_common_ancestor_fn():
+    pass
         
 
 if __name__ == '__main__':    
@@ -507,6 +539,7 @@ if __name__ == '__main__':
         'queue': queue_fn,
         'heapq': heapq_fn,
         'tree': tree_fn,
+        'bst': bst_fn,
         'bfs': bfs_fn,
         'dfs': dfs_fn,
         'dijkstra': dijkstra_fn,
@@ -514,7 +547,8 @@ if __name__ == '__main__':
         'kruskal': kruskal_fn,
         'topological': topological_fn,
         'indexed_tree': indexed_tree_fn,
-        'prim': prim_fn 
+        'prim': prim_fn,
+        'lca': lowest_common_ancestor_fn
     }
 
     parser = argparse.ArgumentParser(description=f"Choose a function to run: {', '.join(functions.keys())}")
