@@ -1,13 +1,13 @@
 #!/bin/bash
 
 FILE_PATH=$1
-
 TAG=$(dirname "$FILE_PATH")
 FILENAME=$(basename "$FILE_PATH")
 
-RAW_NUM=$(echo "$FILENAME" | cut -d'_' -f1) # e.g., 001
-PROBLEM_NUM=$(echo "$RAW_NUM" | sed 's/^0*//') # 1
+RAW_NUM=$(echo "$FILENAME" | cut -d'_' -f1)
+PROBLEM_NUM=$(echo "$RAW_NUM" | sed 's/^0*//')
 
+mkdir -p "$TAG"
 touch "$FILE_PATH"
 
 read -p 'Level(Easy, Medium, Hard): ' level
@@ -37,4 +37,13 @@ fi
 
 sed -i '' "s/| $PROBLEM_NUM |/| $ICON |/" README.md
 
-echo "Created $FILE_PATH and updated README"
+# Adding 'xargs' trims trailing whitespace/tabs
+ACCEPTED=$(grep "^|" README.md | grep -o "✅" | wc -l | xargs)
+FAILED=$(grep "^|" README.md | grep -o "❌" | wc -l | xargs)
+
+TOTAL_TRIED=$((ACCEPTED + FAILED))
+
+sed -i '' "s/Progress: \[ [0-9]* \/ 150 \]/Progress: \[ $TOTAL_TRIED \/ 150 \]/" README.md
+
+echo "Created $FILE_PATH"
+echo "Progress Updated: $TOTAL_TRIED / 150 (Solved: $ACCEPTED, Failed: $FAILED)"
