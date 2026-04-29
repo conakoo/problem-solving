@@ -6,9 +6,10 @@ Must-do List for Interview Prep
 
 ```bash
 # create py file
-./script/init.sh $tag $number_$name
+# e.g. ./script/init.sh 01_array_string/001_merge_sorted_array.py
+./script/init.sh $file_path
 
-# copy and paste the submitted code in $tag/$number_$name.py
+# copy and paste the submitted code in $file_path
 ```
 
 ## GOALS
@@ -23,7 +24,7 @@ Must-do List for Interview Prep
 |---|---|---|---|---|---|---|---|---|----|
 | ✅ | ✅ | ✅ | ✅ | ✅⭐️ | ✅ | ✅ | ✅ | 9 | 10 |
 | 11 | 12 | 13 | 14 | ❌⭐️ | ❌⭐️ | ✅ | 18 | ✅ | ✅ |
-| ✅ | 22 | ✅ | ✅ | 25 | 26 | 27 | 28 | 29 | 30 |
+| ✅ | 22 | ✅ | ✅ | ✅ | ✅ | ✅ | 28 | 29 | 30 |
 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | ✅ | 40 |
 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 |
 | 51 | ✅ | ✅ | ✅ | ✅ | ❌ | 57 | 58 | 59 | 60 |
