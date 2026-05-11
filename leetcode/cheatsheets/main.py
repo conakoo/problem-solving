@@ -77,9 +77,29 @@ def tree_fn():
 
 def binarysearch_fn():
     """Binary Search
+    [1, 3, 7, 8, 9, 11]
+    7
+    
+    Prints:
+        2
     """
-    pass
+    arr = [1, 3, 7, 8, 9, 11]
+    target = 7
 
+    ans = -1
+    n = len(arr)
+    l, r = 0, n-1
+    while l <= r:
+        mid = (l+r)//2
+        if arr[mid] == target:
+            ans = mid
+            break
+        elif arr[mid] < target:
+            l = mid+1
+        else:
+            r = mid-1
+    print(ans)
+    
 
 def countingsort_fn():
     """Counting Sort
@@ -211,7 +231,7 @@ def dfs_fn(): # TODO: change to Graph ver.
 
 
 def dijkstra_fn():
-    """Dijkstra
+    r"""Dijkstra
     0 -(1)-> 1
      \       |
       \      |
@@ -278,7 +298,7 @@ def disjointset_fn():
 
 
 def kruskal_fn():
-    """Kruskal
+    r"""Kruskal
      0 -(1)-- 1
      | \      |
      |  \     |
@@ -329,7 +349,7 @@ def kruskal_fn():
 
 
 def prim_fn():
-    """Prim
+    r"""Prim
      0 -(1)-- 1
      | \      |
      |  \     |
@@ -397,7 +417,7 @@ def prim_fn():
 
 
 def topological_fn():
-    """Topological Algorithm
+    r"""Topological Algorithm
     0 -(1)-> 1
      \       |
       \      |
@@ -539,6 +559,7 @@ if __name__ == '__main__':
         'queue': queue_fn,
         'heapq': heapq_fn,
         'tree': tree_fn,
+        'binarysearch': binarysearch_fn,
         'bst': bst_fn,
         'bfs': bfs_fn,
         'dfs': dfs_fn,
