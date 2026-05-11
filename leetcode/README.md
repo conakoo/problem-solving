@@ -1,6 +1,6 @@
 # LeetCode
 
-[@wreckitcona](https://leetcode.com/wreckitcona/)
+[@conakoo](https://leetcode.com/conakoo/)
 
 ## HOW TO WRITE THE CODE
 
