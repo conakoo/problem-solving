@@ -56,6 +56,27 @@ def heapq_fn():
     print()
 
 
+def linkedlist_fn():
+    """Linked List
+    Prints:
+        7 -> 11 -> 3 -> 2 -> None
+    """
+    class Node:
+        def __init__(self, val):
+            self.val = val
+            self.next = None
+    head = Node(7)
+    head.next = Node(11)
+    head.next.next = Node(3)
+    head.next.next = Node(2)
+
+    cur = head
+    while cur:
+        print(cur.val, end="-> ")
+        cur = cur.next
+    print("None")
+
+
 def tree_fn():
     """Tree
         1
@@ -558,6 +579,7 @@ if __name__ == '__main__':
         'stack': stack_fn,
         'queue': queue_fn,
         'heapq': heapq_fn,
+        'linkedlist': linkedlist_fn,
         'tree': tree_fn,
         'binarysearch': binarysearch_fn,
         'bst': bst_fn,
