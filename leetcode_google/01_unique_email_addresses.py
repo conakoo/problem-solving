@@ -1,9 +1,8 @@
-"""
+"""Split & Replace
+Level: Easy
+
 Let N be the number of the emails and M be the average length of an email.
-
 Time Complexity: O(N⋅M)
-(Number of emails) * (Number of characters in an email) = N*M.
-
 Space Complexity: O(N)
 """
 

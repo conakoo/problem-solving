@@ -1,3 +1,6 @@
+"""Array
+Level: Medium
+"""
 class Solution:
     def maxDistToClosest(self, seats: List[int]) -> int:
         seats = [1]+seats+[1]

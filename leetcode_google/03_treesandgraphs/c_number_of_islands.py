@@ -1,4 +1,4 @@
-"""
+"""DFS
 M is the number of rows and N is the number of columns.
 Time complexity : O(M×N)
 Space complexity : worst case O(M×N) 

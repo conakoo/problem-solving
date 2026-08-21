@@ -1,3 +1,18 @@
+"""Monotonic Stack
+Level: Hard
+
+def monotonic_stack(arr):
+    n = len(arr)
+    s = []
+    for i in range(n):
+        while s and arr[s[-1]] > arr[i]: # monotonic increasing stack [1 < 2 < 4 < 5 ...]
+            s.pop()
+        s.append(i)
+
+N is the length of A.
+Time Complexity: O(NlogN)
+Space Complexity: O(N)
+"""
 class Solution:
     def oddEvenJumps(self, arr: List[int]) -> int:
         n = len(arr)

@@ -1,7 +1,7 @@
 """Sliding Window
-Complexity Analysis
-Let n be the length of the input array fruits.
+Level: Medium
 
+Let n be the length of the input array fruits.
 Time complexity: O(n)
 Space complexity: O(1)
 """

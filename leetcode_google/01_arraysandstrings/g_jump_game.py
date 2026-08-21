@@ -1,4 +1,6 @@
-"""
+"""Dynamic Programming
+Level: Medium
+
 Time complexity : O(n^2)
 Space complexity : O(n)
 """
@@ -13,3 +15,13 @@ class Solution:
                     dp[i] = True
                     break
         return dp[0]
+
+class Solution2:
+    def canJump(self, nums: List[int]) -> bool:
+        n = len(nums)
+        tmp = 0
+        for i in range(n):
+            if tmp < i:
+                break
+            tmp = max(i+nums[i], tmp)
+        return tmp >= n-1

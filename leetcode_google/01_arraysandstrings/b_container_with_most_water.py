@@ -1,3 +1,9 @@
+"""Greedy
+Level: Medium
+
+Time complexity: O(n)
+Space complexity: O(1)
+"""
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         ans = 0

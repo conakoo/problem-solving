@@ -1,3 +1,6 @@
+"""
+Level: Medium
+"""
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:
         n1, n2 = len(num1), len(num2)
